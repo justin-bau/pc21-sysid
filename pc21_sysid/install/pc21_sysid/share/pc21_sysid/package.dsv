@@ -1,8 +1,0 @@
-source;share/pc21_sysid/hook/cmake_prefix_path.ps1
-source;share/pc21_sysid/hook/cmake_prefix_path.dsv
-source;share/pc21_sysid/hook/cmake_prefix_path.sh
-source;share/pc21_sysid/local_setup.bash
-source;share/pc21_sysid/local_setup.dsv
-source;share/pc21_sysid/local_setup.ps1
-source;share/pc21_sysid/local_setup.sh
-source;share/pc21_sysid/local_setup.zsh

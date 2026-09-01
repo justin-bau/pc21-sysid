@@ -1,0 +1,16 @@
+# colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+.vscode/
+.cache/
+compile_commands.json
+
+# OS
+.DS_Store
