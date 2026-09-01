@@ -1,0 +1,55 @@
+From dc2722f429049428615cc934bc6f7168a0a168fb Mon Sep 17 00:00:00 2001
+From: cjuju <noctoir@gmail.com>
+Date: Tue, 1 Sep 2026 17:13:19 +0200
+Subject: [PATCH 5/5] Modified PWM bounds and default pti_params values
+
+---
+ src/drivers/px4io/module.yaml      | 6 +++---
+ src/modules/pti_params/module.yaml | 6 +++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/drivers/px4io/module.yaml b/src/drivers/px4io/module.yaml
+index 062042d4d4..e933361d58 100644
+--- a/src/drivers/px4io/module.yaml
++++ b/src/drivers/px4io/module.yaml
+@@ -8,9 +8,9 @@ actuator_output:
+       timer_config_file: "boards/px4/io-v2/src/timer_config.cpp"
+       standard_params:
+         disarmed: { min: 800, max: 2200, default: 1000 }
+-        min: { min: 800, max: 1400, default: 1000 }
+-        center: { min: 800, max: 2200}
+-        max: { min: 1600, max: 2200, default: 2000 }
++        min: { min: 800, max: 1900, default: 1000 }
++        center: { min: 800, max: 2200 }
++        max: { min: 1100, max: 2200, default: 2000 }
+         failsafe: { min: 800, max: 2200 }
+       pwm_timer_param:
+         description:
+diff --git a/src/modules/pti_params/module.yaml b/src/modules/pti_params/module.yaml
+index a8ab914959..c2bda60727 100644
+--- a/src/modules/pti_params/module.yaml
++++ b/src/modules/pti_params/module.yaml
+@@ -57,7 +57,7 @@ parameters:
+         min: 0.05
+         max: 5.0
+         decimal: 2
+-        default: 0.2
++        default: 0.3
+ 
+       PTI_SWP_FMAX:
+         description:
+@@ -65,9 +65,9 @@ parameters:
+         type: float
+         unit: Hz
+         min: 0.5
+-        max: 20.0
++        max: 15.0
+         decimal: 2
+-        default: 5.0
++        default: 2.5
+ 
+       PTI_SWP_DUR:
+         description:
+-- 
+2.55.0
+

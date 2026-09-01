@@ -1,0 +1,24 @@
+From ac036ad6bda050bb40ccdd9068d6b1d9f6671475 Mon Sep 17 00:00:00 2001
+From: ttechnick <nick.truttmann@auterion.com>
+Date: Wed, 11 Mar 2026 18:51:15 +0100
+Subject: [PATCH 4/5] feat(px4io): enable pwm center
+
+---
+ src/drivers/px4io/module.yaml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/drivers/px4io/module.yaml b/src/drivers/px4io/module.yaml
+index 01d21a4afe..062042d4d4 100644
+--- a/src/drivers/px4io/module.yaml
++++ b/src/drivers/px4io/module.yaml
+@@ -9,6 +9,7 @@ actuator_output:
+       standard_params:
+         disarmed: { min: 800, max: 2200, default: 1000 }
+         min: { min: 800, max: 1400, default: 1000 }
++        center: { min: 800, max: 2200}
+         max: { min: 1600, max: 2200, default: 2000 }
+         failsafe: { min: 800, max: 2200 }
+       pwm_timer_param:
+-- 
+2.55.0
+

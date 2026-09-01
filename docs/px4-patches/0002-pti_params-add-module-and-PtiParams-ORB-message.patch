@@ -1,0 +1,300 @@
+From 7ddd1e597c68d34a0c8ddd748e0213fd26529007 Mon Sep 17 00:00:00 2001
+From: cjuju <noctoir@gmail.com>
+Date: Mon, 17 Aug 2026 01:09:13 +0200
+Subject: [PATCH 2/5] pti_params: add module and PtiParams ORB message
+
+---
+ msg/PtiParams.msg                     |  8 +++
+ src/modules/pti_params/CMakeLists.txt | 10 +++
+ src/modules/pti_params/Kconfig        |  6 ++
+ src/modules/pti_params/module.yaml    | 80 ++++++++++++++++++++++++
+ src/modules/pti_params/pti_params.cpp | 90 +++++++++++++++++++++++++++
+ src/modules/pti_params/pti_params.hpp | 47 ++++++++++++++
+ 6 files changed, 241 insertions(+)
+ create mode 100644 msg/PtiParams.msg
+ create mode 100644 src/modules/pti_params/CMakeLists.txt
+ create mode 100644 src/modules/pti_params/Kconfig
+ create mode 100644 src/modules/pti_params/module.yaml
+ create mode 100644 src/modules/pti_params/pti_params.cpp
+ create mode 100644 src/modules/pti_params/pti_params.hpp
+
+diff --git a/msg/PtiParams.msg b/msg/PtiParams.msg
+new file mode 100644
+index 0000000000..20b470e6ae
+--- /dev/null
++++ b/msg/PtiParams.msg
+@@ -0,0 +1,8 @@
++uint64 timestamp
++float32 amplitude
++float32 step_time
++float32 swp_dur
++float32 swp_fmin
++float32 swp_fmax
++uint8 man_axis
++uint8 man_type
+diff --git a/src/modules/pti_params/CMakeLists.txt b/src/modules/pti_params/CMakeLists.txt
+new file mode 100644
+index 0000000000..8092087590
+--- /dev/null
++++ b/src/modules/pti_params/CMakeLists.txt
+@@ -0,0 +1,10 @@
++px4_add_module(
++				MODULE modules__pti_params
++				MAIN pti_params
++				SRCS
++								pti_params.cpp
++				MODULE_CONFIG
++								module.yaml
++				DEPENDS
++								px4_work_queue
++)
+diff --git a/src/modules/pti_params/Kconfig b/src/modules/pti_params/Kconfig
+new file mode 100644
+index 0000000000..6f84dcef7b
+--- /dev/null
++++ b/src/modules/pti_params/Kconfig
+@@ -0,0 +1,6 @@
++menuconfig MODULES_PTI_PARAMS
++    bool "pti_params"
++    default n
++    ---help---
++        Publishes PTI_* parameters to the pti_params uORB topic for the
++        companion computer.
+diff --git a/src/modules/pti_params/module.yaml b/src/modules/pti_params/module.yaml
+new file mode 100644
+index 0000000000..a8ab914959
+--- /dev/null
++++ b/src/modules/pti_params/module.yaml
+@@ -0,0 +1,80 @@
++module_name: PTI Parameters
++
++parameters:
++  - group: PTI
++    definitions:
++      PTI_MAN_TYPE:
++        description:
++          short: Maneuver type
++          long: |
++            Selects which excitation waveform the companion will run.
++            0=step, 1=doublet, 2=multistep_3211, 3=sweep, 4=multisine (reserved).
++        type: enum
++        values:
++          0: Step
++          1: Doublet
++          2: Multistep 3-2-1-1
++          3: Sweep
++          4: Multisine
++        default: 2
++
++      PTI_MAN_AXIS:
++        description:
++          short: Excitation axis
++        type: enum
++        values:
++          0: Roll
++          1: Pitch
++          2: Yaw
++        default: 1
++
++      PTI_AMPLITUDE:
++        description:
++          short: Amplitude (normalised torque)
++        type: float
++        min: -1.0
++        max: 1.0
++        decimal: 3
++        increment: 0.01
++        default: 0.1
++
++      PTI_STEP_TIME:
++        description:
++          short: Step-based maneuvers step duration
++        type: float
++        unit: s
++        min: 0.05
++        max: 10.0
++        decimal: 2
++        increment: 0.05
++        default: 0.5
++
++      PTI_SWP_FMIN:
++        description:
++          short: Sweep minimum frequency
++        type: float
++        unit: Hz
++        min: 0.05
++        max: 5.0
++        decimal: 2
++        default: 0.2
++
++      PTI_SWP_FMAX:
++        description:
++          short: Sweep maximum frequency
++        type: float
++        unit: Hz
++        min: 0.5
++        max: 20.0
++        decimal: 2
++        default: 5.0
++
++      PTI_SWP_DUR:
++        description:
++          short: Sweep total duration
++        type: float
++        unit: s
++        min: 1.0
++        max: 60.0
++        decimal: 1
++        default: 20.0
+diff --git a/src/modules/pti_params/pti_params.cpp b/src/modules/pti_params/pti_params.cpp
+new file mode 100644
+index 0000000000..221552ee8f
+--- /dev/null
++++ b/src/modules/pti_params/pti_params.cpp
+@@ -0,0 +1,90 @@
++#include "pti_params.hpp"
++
++#include <uORB/topics/pti_params.h>
++
++PtiParams::PtiParams()
++    : ModuleParams(nullptr), // no parent ModuleParams object
++      ScheduledWorkItem(MODULE_NAME, px4::wq_configurations::lp_default) {}
++
++bool PtiParams::init() {
++  // Heartbeat at 1 Hz. The ScheduledWorkItem framework will call Run() on
++  // each schedule, plus immediately whenever parameter_update fires.
++  ScheduleOnInterval(1_s);
++  return true;
++}
++
++void PtiParams::Run() {
++  if (should_exit()) {
++    ScheduleClear();
++    exit_and_cleanup();
++    return;
++  }
++
++  // --- Parameter update boilerplate ---
++  // updateParams() is what the docs call "the boilerplate". It refreshes
++  // every ParamInt/ParamFloat attribute against the current param store.
++  if (_parameter_update_sub.updated()) {
++    parameter_update_s pu;
++    _parameter_update_sub.copy(&pu);
++    updateParams(); // refreshes all DEFINE_PARAMETERS members
++  }
++
++  // --- Publish current values as a uORB message ---
++  pti_params_s msg{};
++  msg.timestamp = hrt_absolute_time();
++  msg.man_type = _p_man_type.get();
++  msg.man_axis = _p_man_axis.get();
++  msg.amplitude = _p_amplitude.get();
++  msg.step_time = _p_step_time.get();
++  msg.swp_fmin = _p_swp_fmin.get();
++  msg.swp_fmax = _p_swp_fmax.get();
++  msg.swp_dur = _p_swp_dur.get();
++  _pti_params_pub.publish(msg);
++}
++
++// ---- ModuleBase static plumbing ----
++
++int PtiParams::task_spawn(int argc, char *argv[]) {
++  PtiParams *instance = new PtiParams();
++  if (!instance) {
++    PX4_ERR("alloc failed");
++    return PX4_ERROR;
++  }
++
++  _object.store(instance);
++  _task_id = task_id_is_work_queue;
++
++  if (!instance->init()) {
++    delete instance;
++    _object.store(nullptr);
++    _task_id = -1;
++    return PX4_ERROR;
++  }
++
++  return PX4_OK;
++}
++
++int PtiParams::custom_command(int argc, char *argv[]) {
++  return print_usage("unknown command");
++}
++
++int PtiParams::print_usage(const char *reason) {
++  if (reason)
++    PX4_WARN("%s\n", reason);
++
++  PRINT_MODULE_DESCRIPTION(R"DESCR(
++### Description
++Publishes the PTI_* parameter values as a `pti_params` uORB message at 1 Hz
++for the companion computer.
++)DESCR");
++
++  PRINT_MODULE_USAGE_NAME("pti_params", "system");
++  PRINT_MODULE_USAGE_COMMAND("start");
++  PRINT_MODULE_USAGE_DEFAULT_COMMANDS();
++  return 0;
++}
++
++// Required entry point — name must be `<module_name>_main`
++extern "C" __EXPORT int pti_params_main(int argc, char *argv[]) {
++  return PtiParams::main(argc, argv);
++}
+diff --git a/src/modules/pti_params/pti_params.hpp b/src/modules/pti_params/pti_params.hpp
+new file mode 100644
+index 0000000000..0709687b3c
+--- /dev/null
++++ b/src/modules/pti_params/pti_params.hpp
+@@ -0,0 +1,47 @@
++#pragma once
++
++#include <px4_platform_common/defines.h>
++#include <px4_platform_common/module.h>
++#include <px4_platform_common/module_params.h>
++#include <px4_platform_common/posix.h>
++#include <px4_platform_common/px4_work_queue/ScheduledWorkItem.hpp>
++
++#include <uORB/Publication.hpp>
++#include <uORB/Subscription.hpp>
++#include <uORB/SubscriptionInterval.hpp>
++#include <uORB/topics/parameter_update.h>
++#include <uORB/topics/pti_params.h>
++
++using namespace time_literals;
++
++class PtiParams : public ModuleBase<PtiParams>,
++                  public ModuleParams,
++                  public px4::ScheduledWorkItem {
++public:
++  PtiParams();
++  ~PtiParams() override = default;
++
++  // ModuleBase plumbing — required for `pti_params start/stop/status` to work
++  static int task_spawn(int argc, char *argv[]);
++  static int custom_command(int argc, char *argv[]);
++  static int print_usage(const char *reason = nullptr);
++
++  bool init();
++
++private:
++  void Run() override;
++
++  // Bound to parameter_update at construction; throttled to 1 s in code
++  uORB::SubscriptionInterval _parameter_update_sub{ORB_ID(parameter_update),
++                                                   1_s};
++
++  uORB::Publication<pti_params_s> _pti_params_pub{ORB_ID(pti_params)};
++
++  DEFINE_PARAMETERS((ParamInt<px4::params::PTI_MAN_TYPE>)_p_man_type,
++                    (ParamInt<px4::params::PTI_MAN_AXIS>)_p_man_axis,
++                    (ParamFloat<px4::params::PTI_AMPLITUDE>)_p_amplitude,
++                    (ParamFloat<px4::params::PTI_STEP_TIME>)_p_step_time,
++                    (ParamFloat<px4::params::PTI_SWP_FMIN>)_p_swp_fmin,
++                    (ParamFloat<px4::params::PTI_SWP_FMAX>)_p_swp_fmax,
++                    (ParamFloat<px4::params::PTI_SWP_DUR>)_p_swp_dur)
++};
+-- 
+2.55.0
+
