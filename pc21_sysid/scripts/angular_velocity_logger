@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+"""Entry-point wrapper for ros2 run."""
+from pc21_sysid.angular_velocity_logger import main
+
+if __name__ == '__main__':
+    main()

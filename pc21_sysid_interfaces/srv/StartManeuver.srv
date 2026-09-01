@@ -1,0 +1,9 @@
+# Request
+string maneuver_name
+string axis
+float64 amplitude
+string params_json
+---
+# Response
+bool success
+string message

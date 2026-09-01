@@ -1,0 +1,102 @@
+[2.411s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'pc21_sysid']
+[2.411s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['pc21_sysid'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff8696a530>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff86a7ba00>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff86a7ba00>>)
+[4.538s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[4.539s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[4.539s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[4.540s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[4.540s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[4.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[4.541s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid'
+[4.542s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[4.543s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[4.544s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[4.545s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[4.545s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[4.546s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[4.546s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[4.546s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[4.547s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[4.728s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'pc21_sysid'
+[4.729s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[4.729s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[4.730s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[4.730s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[4.730s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[5.009s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[5.010s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[5.056s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/tud-rpi-msc-bauer/px4_ros_ws/install
+[5.076s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/tud-rpi-msc-bauer/px4_ros_uxrce_dds_ws/src/install
+[5.098s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 184 installed packages in /opt/ros/humble
+[5.110s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[5.651s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'cmake_args' from command line to 'None'
+[5.652s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'cmake_target' from command line to 'None'
+[5.652s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.652s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'cmake_clean_cache' from command line to 'False'
+[5.653s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'cmake_clean_first' from command line to 'False'
+[5.653s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'cmake_force_configure' from command line to 'False'
+[5.653s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'ament_cmake_args' from command line to 'None'
+[5.653s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'catkin_cmake_args' from command line to 'None'
+[5.653s] Level 5:colcon.colcon_core.verb:set package 'pc21_sysid' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.654s] DEBUG:colcon.colcon_core.verb:Building package 'pc21_sysid' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid', 'merge_install': False, 'path': '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid', 'symlink_install': False, 'test_result_base': None}
+[5.655s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[5.661s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[5.663s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid' with build type 'ament_cmake'
+[5.664s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid'
+[5.699s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[5.702s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.702s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.862s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid -- -j4 -l4
+[335.726s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid -- -j4 -l4
+[336.230s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid
+[337.493s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid
+[337.495s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pc21_sysid)
+[337.923s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid' for CMake module files
+[337.937s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid' for CMake config files
+[337.953s] Level 1:colcon.colcon_core.shell:create_environment_hook('pc21_sysid', 'cmake_prefix_path')
+[337.972s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/hook/cmake_prefix_path.ps1'
+[338.099s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/hook/cmake_prefix_path.dsv'
+[338.113s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/hook/cmake_prefix_path.sh'
+[338.140s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib'
+[338.142s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/bin'
+[338.143s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/pkgconfig/pc21_sysid.pc'
+[338.195s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/python3.10/site-packages'
+[338.202s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/bin'
+[338.208s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.ps1'
+[338.245s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.dsv'
+[338.257s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.sh'
+[338.274s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.bash'
+[338.297s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.zsh'
+[338.322s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/colcon-core/packages/pc21_sysid)
+[338.375s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pc21_sysid)
+[338.380s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid' for CMake module files
+[338.394s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid' for CMake config files
+[338.400s] Level 1:colcon.colcon_core.shell:create_environment_hook('pc21_sysid', 'cmake_prefix_path')
+[338.402s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/hook/cmake_prefix_path.ps1'
+[338.412s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/hook/cmake_prefix_path.dsv'
+[338.417s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/hook/cmake_prefix_path.sh'
+[338.426s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib'
+[338.427s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/bin'
+[338.428s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/pkgconfig/pc21_sysid.pc'
+[338.431s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/python3.10/site-packages'
+[338.434s] Level 1:colcon.colcon_core.environment:checking '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/bin'
+[338.437s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.ps1'
+[338.443s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.dsv'
+[338.448s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.sh'
+[338.452s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.bash'
+[338.456s] INFO:colcon.colcon_core.shell:Creating package script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.zsh'
+[338.463s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/colcon-core/packages/pc21_sysid)
+[338.481s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[338.515s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[338.520s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[338.527s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[338.566s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[338.581s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/local_setup.ps1'
+[338.600s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/_local_setup_util_ps1.py'
+[338.623s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/setup.ps1'
+[338.655s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/local_setup.sh'
+[338.672s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/_local_setup_util_sh.py'
+[338.685s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/setup.sh'
+[338.706s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/local_setup.bash'
+[338.714s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/setup.bash'
+[338.737s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/local_setup.zsh'
+[338.745s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/setup.zsh'

@@ -1,0 +1,8 @@
+setup.py
+pc21_sysid/__init__.py
+pc21_sysid/angular_velocity_logger.py
+pc21_sysid/manual_control_stub.py
+pc21_sysid.egg-info/PKG-INFO
+pc21_sysid.egg-info/SOURCES.txt
+pc21_sysid.egg-info/dependency_links.txt
+pc21_sysid.egg-info/top_level.txt

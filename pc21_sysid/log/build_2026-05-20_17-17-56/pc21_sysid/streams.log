@@ -1,0 +1,87 @@
+[0.182s] Invoking command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid -DCMAKE_INSTALL_PREFIX=/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid
+[1.691s] -- The C compiler identification is GNU 11.4.0
+[2.633s] -- The CXX compiler identification is GNU 11.4.0
+[2.820s] -- Detecting C compiler ABI info
+[3.526s] -- Detecting C compiler ABI info - done
+[3.585s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.589s] -- Detecting C compile features
+[3.595s] -- Detecting C compile features - done
+[3.628s] -- Detecting CXX compiler ABI info
+[4.370s] -- Detecting CXX compiler ABI info - done
+[4.432s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.434s] -- Detecting CXX compile features
+[4.438s] -- Detecting CXX compile features - done
+[4.545s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[6.126s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[7.414s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[8.356s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[8.460s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[8.614s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[8.824s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[9.078s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[9.812s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[9.867s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[11.010s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[11.264s] -- Found FastRTPS: /opt/ros/humble/include  
+[11.667s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[11.836s] -- Looking for pthread.h
+[12.573s] -- Looking for pthread.h - found
+[12.575s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[13.304s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[13.314s] -- Found Threads: TRUE  
+[14.061s] -- Found rclpy: 3.3.21 (/opt/ros/humble/share/rclpy/cmake)
+[14.100s] -- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)
+[14.233s] -- Found px4_msgs: 2.0.1 (/home/tud-rpi-msc-bauer/px4_ros_ws/install/px4_msgs/share/px4_msgs/cmake)
+[14.398s] -- Found pc21_sysid_interfaces: 0.0.0 (/home/tud-rpi-msc-bauer/px4_ros_ws/install/pc21_sysid_interfaces/share/pc21_sysid_interfaces/cmake)
+[15.362s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[16.649s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[16.651s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/include>
+[16.651s] -- Configured cppcheck exclude dirs and/or files: 
+[16.693s] -- Added test 'flake8' to check Python code syntax and style conventions
+[16.770s] -- Added test 'lint_cmake' to check CMake code style
+[16.813s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[17.103s] -- Added test 'uncrustify' to check C / C++ code style
+[17.104s] -- Configured uncrustify additional arguments: 
+[17.146s] -- Added test 'xmllint' to check XML markup files
+[17.167s] -- Configuring done
+[17.323s] -- Generating done
+[17.367s] -- Build files have been written to: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid
+[17.439s] Invoked command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid -DCMAKE_INSTALL_PREFIX=/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid
+[17.460s] Invoking command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid -- -j4 -l4
+[17.910s] [ 14%] [32mBuilding CXX object CMakeFiles/maneuver_runner.dir/src/main.cpp.o[0m
+[17.919s] [ 28%] [32mBuilding CXX object CMakeFiles/maneuver_runner.dir/src/maneuver_runner.cpp.o[0m
+[17.928s] [ 42%] [32mBuilding CXX object CMakeFiles/maneuver_runner.dir/src/maneuvers/doublet.cpp.o[0m
+[17.996s] [ 42%] Built target ament_cmake_python_copy_pc21_sysid
+[18.076s] [ 57%] [32mBuilding CXX object CMakeFiles/maneuver_runner.dir/src/maneuvers/multistep_3211.cpp.o[0m
+[60.246s] [ 71%] [32mBuilding CXX object CMakeFiles/maneuver_runner.dir/src/maneuvers/sweep.cpp.o[0m
+[65.615s] running egg_info
+[65.621s] creating pc21_sysid.egg-info
+[65.625s] writing pc21_sysid.egg-info/PKG-INFO
+[65.632s] writing dependency_links to pc21_sysid.egg-info/dependency_links.txt
+[65.634s] writing top-level names to pc21_sysid.egg-info/top_level.txt
+[65.636s] writing manifest file 'pc21_sysid.egg-info/SOURCES.txt'
+[65.663s] reading manifest file 'pc21_sysid.egg-info/SOURCES.txt'
+[65.670s] writing manifest file 'pc21_sysid.egg-info/SOURCES.txt'
+[66.037s] [ 71%] Built target ament_cmake_python_build_pc21_sysid_egg
+[111.741s] [01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:[m[K In member function ‘[01m[Kvoid pc21_sysid::ManeuverRunner::control_step()[m[K’:
+[111.794s] [01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:317:39:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[111.796s]   317 | void ManeuverRunner::publish_heartbeat[01;31m[K([m[K) {
+[111.797s]       |                                       [01;31m[K^[m[K
+[111.798s] [01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:330:38:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[111.800s]   330 | void ManeuverRunner::check_rc_trigger[01;31m[K([m[K) {
+[111.801s]       |                                      [01;31m[K^[m[K
+[111.802s] [01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:343:39:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[111.803s]   343 | void ManeuverRunner::handle_rc_trigger[01;31m[K([m[K) {
+[111.805s]       |                                       [01;31m[K^[m[K
+[111.806s] [01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:[m[K At global scope:
+[111.808s] [01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:430:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[111.810s]   430 | }[01;31m[K [m[K // namespace pc21_sysid
+[111.811s]       |  [01;31m[K^[m[K
+[111.812s] [01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:10:22:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[111.814s]    10 | namespace pc21_sysid [01;36m[K{[m[K
+[111.815s]       |                      [01;36m[K^[m[K
+[146.731s] [ 85%] [32mBuilding CXX object CMakeFiles/maneuver_runner.dir/src/maneuvers/registry.cpp.o[0m
+[271.906s] gmake[2]: *** [CMakeFiles/maneuver_runner.dir/build.make:90: CMakeFiles/maneuver_runner.dir/src/maneuver_runner.cpp.o] Error 1
+[272.035s] gmake[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/maneuver_runner.dir/all] Error 2
+[272.037s] gmake: *** [Makefile:146: all] Error 2
+[273.137s] Invoked command in '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/build/pc21_sysid -- -j4 -l4

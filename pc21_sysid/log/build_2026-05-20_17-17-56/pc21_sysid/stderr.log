@@ -1,0 +1,20 @@
+[01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:[m[K In member function ‘[01m[Kvoid pc21_sysid::ManeuverRunner::control_step()[m[K’:
+[01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:317:39:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  317 | void ManeuverRunner::publish_heartbeat[01;31m[K([m[K) {
+      |                                       [01;31m[K^[m[K
+[01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:330:38:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  330 | void ManeuverRunner::check_rc_trigger[01;31m[K([m[K) {
+      |                                      [01;31m[K^[m[K
+[01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:343:39:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  343 | void ManeuverRunner::handle_rc_trigger[01;31m[K([m[K) {
+      |                                       [01;31m[K^[m[K
+[01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:[m[K At global scope:
+[01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:430:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  430 | }[01;31m[K [m[K // namespace pc21_sysid
+      |  [01;31m[K^[m[K
+[01m[K/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/src/maneuver_runner.cpp:10:22:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   10 | namespace pc21_sysid [01;36m[K{[m[K
+      |                      [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/maneuver_runner.dir/build.make:90: CMakeFiles/maneuver_runner.dir/src/maneuver_runner.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/maneuver_runner.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

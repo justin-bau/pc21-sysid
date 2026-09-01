@@ -1,0 +1,47 @@
+[35m[1mConsolidate compiler generated dependencies of target maneuver_runner[0m
+[  0%] Built target ament_cmake_python_copy_pc21_sysid
+[ 14%] [32mBuilding CXX object CMakeFiles/maneuver_runner.dir/src/maneuver_runner.cpp.o[0m
+running egg_info
+writing pc21_sysid.egg-info/PKG-INFO
+writing dependency_links to pc21_sysid.egg-info/dependency_links.txt
+writing top-level names to pc21_sysid.egg-info/top_level.txt
+reading manifest file 'pc21_sysid.egg-info/SOURCES.txt'
+writing manifest file 'pc21_sysid.egg-info/SOURCES.txt'
+[ 14%] Built target ament_cmake_python_build_pc21_sysid_egg
+[ 28%] [32m[1mLinking CXX executable maneuver_runner[0m
+[100%] Built target maneuver_runner
+-- Install configuration: ""
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/pc21_sysid/maneuver_runner
+-- Set runtime path of "/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/pc21_sysid/maneuver_runner" to ""
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/environment/pythonpath.sh
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/environment/pythonpath.dsv
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid-0.1.0-py3.10.egg-info
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid-0.1.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid-0.1.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid-0.1.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid-0.1.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid/__init__.py
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid/angular_velocity_logger.py
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid/manual_control_stub.py
+Listing '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid'...
+Compiling '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid/__init__.py'...
+Compiling '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid/angular_velocity_logger.py'...
+Compiling '/home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/local/lib/python3.10/dist-packages/pc21_sysid/manual_control_stub.py'...
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/pc21_sysid/manual_control_stub
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/lib/pc21_sysid/angular_velocity_logger
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/ament_index/resource_index/package_run_dependencies/pc21_sysid
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/ament_index/resource_index/parent_prefix_path/pc21_sysid
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/environment/ament_prefix_path.sh
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/environment/ament_prefix_path.dsv
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/environment/path.sh
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/environment/path.dsv
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/local_setup.bash
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/local_setup.sh
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/local_setup.zsh
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/local_setup.dsv
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.dsv
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/ament_index/resource_index/packages/pc21_sysid
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/cmake/pc21_sysidConfig.cmake
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/cmake/pc21_sysidConfig-version.cmake
+-- Installing: /home/tud-rpi-msc-bauer/px4_ros_ws/src/pc21_sysid/install/pc21_sysid/share/pc21_sysid/package.xml

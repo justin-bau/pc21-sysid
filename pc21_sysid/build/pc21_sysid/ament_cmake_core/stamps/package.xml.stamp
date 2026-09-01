@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>pc21_sysid</name>
+  <version>0.1.0</version>
+  <description>System-identification framework for PC-21 SUAV: pilot-passthrough offboard injection of doublet, 3-2-1-1, and sweep maneuvers.</description>
+  <maintainer email="tud-rpi-msc-bauer@todo.todo">tud-rpi-msc-bauer</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>std_srvs</depend>
+  <depend>px4_msgs</depend>
+  <depend>pc21_sysid_interfaces</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
