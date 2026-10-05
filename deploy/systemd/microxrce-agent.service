@@ -1,0 +1,17 @@
+# /etc/systemd/system/microxrce-agent.service
+[Unit]
+Description=MicroXRCE-DDS Agent for PX4 bridge
+After=network.target
+
+[Service]
+Type=simple
+User=tud-rpi-msc-bauer
+ExecStart=/bin/bash -lc "source /opt/ros/humble/setup.bash && source /home/tud-rpi-msc-bauer/px4_ros_uxrce_dds_ws/src/install/local_setup.bash && exec MicroXRCEAgent serial --dev /dev/ttyAMA0 -b 921600"
+Restart=always
+RestartSec=2
+Nice=-10
+IOSchedulingClass=realtime
+IOSchedulingPriority=4 
+
+[Install]
+WantedBy=multi-user.target

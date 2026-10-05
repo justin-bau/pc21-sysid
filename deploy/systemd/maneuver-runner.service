@@ -1,0 +1,19 @@
+# /etc/systemd/system/maneuver-runner.service
+[Unit]
+Description=PC-21 sysid maneuver runner
+After=network.target microxrce-agent.service
+Wants=microxrce-agent.service
+
+[Service]
+Type=simple
+User=tud-rpi-msc-bauer
+WorkingDirectory=/home/tud-rpi-msc-bauer
+ExecStart=/bin/bash -lc "source /opt/ros/humble/setup.bash && source /home/tud-rpi-msc-bauer/px4_ros_ws/install/setup.bash && exec ros2 run pc21_sysid maneuver_runner"
+Restart=always
+RestartSec=2
+Nice=-10
+IOSchedulingClass=realtime
+IOSchedulingPriority=4
+
+[Install]
+WantedBy=multi-user.target

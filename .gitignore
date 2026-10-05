@@ -1,11 +1,9 @@
-build/
-install/
-log/
-
 __pycache__/
 *.pyc
+.rumdl_cache/
 
 .cache/
 compile_commands.json
 
 .DS_Store
+.lazy.lua

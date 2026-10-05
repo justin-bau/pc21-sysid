@@ -104,6 +104,8 @@ void ManeuverRunner::on_manual_control(
     // so the first edge-detection pass sees no transition.
     pilot_aux_trigger_prev_ = msg->aux5;
   }
+  // Maneuver trigger is fixed to aux5, future versions should make it
+  // configurable
   pilot_aux_trigger_ = msg->aux5;
 
   pilot_roll_ = msg->roll;
@@ -291,7 +293,8 @@ void ManeuverRunner::control_step() {
     thrust_pub_->publish(thrust_msg);
   }
 
-  // --- Latency measurement: entry to publish ---
+  // Latency measurement: entry to publish
+  // Only used during bench testing, not with PX4
   const double latency_s = now_s() - t;
   max_latency_s_ = std::max(max_latency_s_, latency_s);
   min_latency_s_ = std::min(min_latency_s_, latency_s);
@@ -408,10 +411,10 @@ void ManeuverRunner::handle_rc_trigger() {
                   pti_swp_fmin_, pti_swp_fmax_);
       return;
     }
-    if (pti_swp_dur_ <= 0.0f || pti_swp_fmin_ * pti_swp_dur_ < 1.0f) {
+    if (pti_swp_dur_ <= 0.0f || pti_swp_fmin_ * pti_swp_dur_ < 2.0f) {
       RCLCPP_WARN(get_logger(),
                   "RC trigger ignored: PTI_SWP_DUR=%.3f too short for "
-                  "PTI_SWP_FMIN=%.3f (need f_min*T >= 1)",
+                  "PTI_SWP_FMIN=%.3f (need f_min*T >= 2)",
                   pti_swp_dur_, pti_swp_fmin_);
       return;
     }
