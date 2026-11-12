@@ -3,19 +3,11 @@
 Modular framework to inject automated maneuvers on the baron's PX4 flight controller using a
 companion computer.
 
-## To document
-
-- Description of the hardware / software stack (with versions (don't forget the cherrypicked
-  commit))
-- Instructions to obtain the software stack
-- How it works, how to build it and run it
-- How to modify or add maneuvers
-- What to upgrade in the future: json, noise, multi-axis, parameterized control (not always aux5)
-- I compiled directly on the raspberry which is slow. Document how to crosscompile it properly
+To note: here a positive signal amplitude (in pitch torque) results in trailing edge of the elevator
+down.
 
 ## To add to the repo
 
-- px4_msgs
 - deployment config (systemd services, .sh, ...)
 
 ## PX4 changes
@@ -115,7 +107,7 @@ ssh -t pi sudo systemctl restart maneuver-runner
 
 ### Services on the Pi
 
-Two systemd services, in `deploy/systemd/`, start everything at boot:
+Two systemd services in `deploy/systemd/` to start everything at boot:
 
 - `microxrce-agent.service` runs the uXRCE-DDS agent on the serial link to the Pixhawk
   (`/dev/ttyAMA0`, 921600 baud). The agent is built separately, in `~/px4_ros_uxrce_dds_ws`.
@@ -123,7 +115,7 @@ Two systemd services, in `deploy/systemd/`, start everything at boot:
   `ros2 run pc21_sysid maneuver_runner`. It starts after the agent and restarts automatically if the
   node exits.
 
-To install them on a fresh Pi, from the repository root:
+To install them on a new Pi, from the repository root:
 
 ```bash
 sudo cp deploy/systemd/*.service /etc/systemd/system/
@@ -131,7 +123,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now microxrce-agent maneuver-runner
 ```
 
-Useful commands on the Pi:
+Useful troubleshooting commands on the Pi:
 
 ```bash
 systemctl status maneuver-runner
@@ -139,6 +131,3 @@ journalctl -u maneuver-runner -f
 sudo systemctl restart maneuver-runner
 sudo systemctl stop maneuver-runner
 ```
-
-`journalctl -f` follows the node's output live. Stopping the service is needed before starting the
-node by hand with `ros2 run`, otherwise two instances run at once.
